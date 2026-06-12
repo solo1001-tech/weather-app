@@ -1,16 +1,201 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Weather App is a responsive weather forecasting application built with React and Vite. Users can search for any city and view current weather conditions along with forecast information. The application integrates with the OpenWeather API and provides a clean, user-friendly interface for checking weather data around the world.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+* Search weather by city name
+* Current weather conditions
+* Multi-day weather forecast
+* Temperature unit toggle (°C / °F)
+* Loading states and error handling
+* Empty state for first-time users
+* Responsive design for desktop and mobile devices
+* Weather condition icons and descriptions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+* React
+* JavaScript (ES6+)
+* Vite
+* CSS
+* OpenWeather API
+* React Hooks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/weather-app.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd weather-web
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_OPENWEATHER_API_KEY=your_api_key_here
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open your browser and visit:
+
+```text
+http://localhost:5173
+```
+
+## Project Structure
+
+```text
+WEATHER-APP/
+└── weather-web/
+    ├── src/
+    │   ├── assets/
+    │   │   ├── react.svg
+    │   │   └── vite.svg
+    │   │
+    │   ├── components/
+    │   │   ├── EmptyState.jsx
+    │   │   ├── ErrorState.jsx
+    │   │   ├── Forecast.jsx
+    │   │   ├── LoadingState.jsx
+    │   │   ├── SearchBar.jsx
+    │   │   ├── UnitToggle.jsx
+    │   │   └── WeatherCard.jsx
+    │   │
+    │   ├── hooks/
+    │   │   └── useWeather.js
+    │   │
+    │   ├── services/
+    │   │   └── weatherService.js
+    │   │
+    │   ├── utils/
+    │   │   └── helpers.js
+    │   │
+    │   ├── App.css
+    │   ├── App.jsx
+    │   ├── Helpers.js
+    │   ├── index.css
+    │   ├── index.js
+    │   └── main.jsx
+    │
+    ├── .env
+    ├── .gitignore
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    └── vite.config.js
+```
+
+## Component Overview
+
+### SearchBar.jsx
+
+Handles user input and city searches.
+
+### WeatherCard.jsx
+
+Displays current weather information including temperature, conditions, humidity, and wind speed.
+
+### Forecast.jsx
+
+Displays upcoming weather forecast data.
+
+### UnitToggle.jsx
+
+Allows users to switch between Celsius and Fahrenheit.
+
+### LoadingState.jsx
+
+Displays loading feedback while weather data is being fetched.
+
+### ErrorState.jsx
+
+Displays user-friendly error messages.
+
+### EmptyState.jsx
+
+Provides a welcome screen before any weather search is performed.
+
+## Custom Hook
+
+### useWeather.js
+
+A custom React Hook responsible for:
+
+* Managing weather-related state
+* Handling API requests
+* Managing loading and error states
+* Processing weather data
+
+## Service Layer
+
+### weatherService.js
+
+Handles communication with the OpenWeather API and transforms raw API responses into application-friendly data structures.
+
+## Utility Functions
+
+### helpers.js
+
+Contains reusable helper functions used throughout the application.
+
+## Learning Objectives
+
+This project was created to practice:
+
+* React Components
+* Props
+* React Hooks
+* Custom Hooks
+* API Integration
+* Asynchronous JavaScript
+* Error Handling
+* State Management
+* Project Structure
+* Environment Variables
+* Responsive Design
+
+## Future Improvements
+
+* Hourly weather forecast
+* Search history
+* Favorite locations
+* Dark mode
+* Geolocation support
+* Weather maps
+* Air quality information
+* Weather alerts and notifications
+
+## API
+
+This project uses the OpenWeather API to retrieve weather and forecast data.
+
+
+## Author
+
+Chea Soun
+
+## License
+
+This project is intended for educational and portfolio purposes.
